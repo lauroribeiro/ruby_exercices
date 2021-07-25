@@ -1,4 +1,5 @@
 def caesar(string, key)
+  result = ""
   shift = get_shift(key)
   string.chars.map do |char|
     chr = char.ord
@@ -11,8 +12,9 @@ def caesar(string, key)
       chr += 26 if chr < 97
       chr -= 26 if chr > 122
     end
-    chr.chr
+    result += chr.chr
   end
+  result
 end
 
 def get_shift(key)
